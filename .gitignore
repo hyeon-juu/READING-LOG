@@ -140,3 +140,12 @@ $RECYCLE.BIN/
 .env
 *.key
 *.pem
+
+# eclips
+.classpath
+.project
+.settings/
+
+# OS-specific
+.DS_Store
+Thumbs.db
