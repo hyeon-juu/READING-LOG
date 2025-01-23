@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Platypi:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Platypi:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&display=swap');
+
+@import "variables.css";
+
+/* components */
+@import "components/header.css";
+@import "components/nav.css";
+@import "components/user.css";
+
+/* Screens */
+@import "screens/index.css";
+@import "screens/bookResult.css";
+
+@import "screens/bookBestAndNew.css";  /* 장미연님 */
+@import "screens/bookDetail.css";
+
+@import "screens/bookBoard.css";  /* 이준성님 */
+@import "screens/registerPostStyle.css";
+@import "screens/postDetailStyle.css";
+
+@import "screens/myPageStyle.css"; /* 홍주희님*/
+
+
+
+*,
+*::before,
+*::after{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Platypi", serif;
+    background-color: var(--green);
+    padding : 20px 100px;
+    color : var(--white);
+    height : 100vh;
+}
+a{
+    text-decoration: none;
+    color : var(--white);
+}
+li{
+    list-style: none;
+}

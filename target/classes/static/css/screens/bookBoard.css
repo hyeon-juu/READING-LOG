@@ -1,0 +1,206 @@
+/* bookBoard.css */
+main {
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.category {
+  display: flex;
+  margin-bottom: 20px;
+  padding : 0 130px;
+  margin: 20px;
+}
+.category__button{
+  width : 300px;
+}
+.category__button a, 
+.category__button button{
+    border-radius: 0;
+}
+
+.post-header {
+  display: flex;
+  padding: 10px;
+  font-weight: 600;
+  font-size : 20px;
+  padding : 10px 0px;
+  margin : 10px;
+  border-top: 1px solid var(--white);
+  border-bottom: 1px solid var(--white);
+  background-color: #ccd5ae;
+  color : var(--green);
+}
+
+.post-list {
+  margin: 0 auto;
+  width: 75%;
+  margin-bottom: 20px;
+}
+
+.post:hover{
+    background-color: var(--light-green);
+    cursor: pointer;
+}
+
+#create-post {
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: auto;
+    color : var(--white);
+    background-color: var(--light-green);
+    padding : 10px 20px;
+    border: 1.5px solid var(--white);
+    font-weight: 600;
+}
+#create-post:hover{
+    background-color: var(--green);
+}
+
+
+.header-item {
+  flex: 1;
+  text-align: center;
+}
+
+.post {
+  display: flex;
+  padding : 10px 0px 10px 50px;
+  border-bottom: 1px solid var(--white);
+}
+
+.post-item {
+  flex: 1;
+  text-align: center;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 75%;
+  margin: 20px auto;
+}
+
+.search input[type="text"] {
+  padding: 10px;
+}
+
+.search button {
+  padding: 10px 20px;
+  background-color: var(--light-green);
+  color: var(--white);
+  border : none;
+  cursor: pointer;
+}
+
+.pagination {
+  text-align: center;
+}
+
+.pagination a {
+  padding: 7px 12px;
+  margin-right: 5px;
+  background-color: var(--light-green);
+  color: var(--white);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pagination a.active {
+  background-color: #28a745;
+}
+
+
+
+/*writeform.jsp*/
+
+/* 메인 컨테이너 스타일 */
+.post-form-box {
+    max-width: 1000px; /* 최대 너비 설정 */
+    margin: 0 auto;
+    font-family: "Diphylleia", serif;
+    padding: 2rem;
+    transform: translateY(-20px);
+}
+
+/* 폼 그룹 스타일 */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* 라벨 스타일 */
+label {
+    display: block; 
+    margin-bottom: 0.5rem;
+    font-size: 20px; 
+    padding-bottom: 10px;
+}
+
+
+
+/* .button-group {
+    display: flex;
+    justify-content: flex-end; 버튼 그룹을 오른쪽으로 정렬
+    margin-top: 1rem;
+}
+ */
+
+
+.form-container{
+	font-family: "Diphylleia", serif;
+	background-color : var(--light-green);
+	border-radius : 10px;
+	padding : 40px;
+	font-weight: 600;
+}
+.form-container form{
+	display : flex;
+	flex-direction : column;
+}
+.form-container label{
+	margin-top : 10px;
+	display :inline;
+	margin-right : 20px;
+}
+.board_title,
+.board_contents{
+	padding-right : 20px;
+}
+#board_title,
+#board_writer,
+#board_pw,
+#board_contents{
+	padding : 10px 20px;
+	border-radius : 10px;
+	border : none;
+	width : 60%;
+}
+#board_contents{
+	padding : 20px;
+}
+
+.form-container form div{
+	display : flex;
+	margin : 25px;
+}
+.button-group{
+	position : absolute;
+	bottom : -40px;
+	right : 200px;
+}
+.button-group button{
+	border : 1px solid var(--white);
+	padding : 10px 20px;
+	border-radius : 10px;
+	margin : 10px;
+	background-color : var(--green);
+	color : white;
+	font-size : 18px;
+}
+.button-group button:hover{
+	cursor : pointer;
+}

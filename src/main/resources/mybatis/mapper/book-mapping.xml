@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="readinglog.BookDAO">
+
+	<!-- hyunju part -->
+	
+    <select id="getTodayBook" resultType="readinglog.BookDTO">
+        SELECT * FROM books ORDER BY RAND() LIMIT 1
+    </select>
+    
+    <!-- -->
+    
+    <!-- miyeon part -->
+    
+    <!--첫 페이지 책 목록 전체 보여주기-->
+    <select id="getAllBooks" resultType="readinglog.BookDTO">
+        select * from books
+    </select>
+
+    <!--페이징 처리-->
+	<select id="getPagingBookNewList" resultType="bookdto">
+	 select * from books order by book_published_date desc limit
+	 <foreach collection="array" item="a" separator=",">
+	 	#{a}
+	 </foreach> 
+	</select> 
+
+	<!-- 전체 페이지 총 개수 -->
+	<select id="totalCount" resultType="int">
+		select count(*) from books  
+	</select>
+
+     <!-- 제목으로 책 조회 -->
+    <select id="getBookByTitle" parameterType="String" resultType="bookdto">
+        select * from books
+        where book_title = #{title}
+    </select>  
+
+	<!-- 주문수가 가장 많은 상위 3개의 책 조회 -->
+    <select id="getTop3BooksByQuantity" resultType="readinglog.BookDTO">
+    	select * from orders
+    	order by order_quantity desc limit 3
+    </select>       
+
+</mapper>

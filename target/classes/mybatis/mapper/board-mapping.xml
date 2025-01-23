@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="readinglog.BoardDAO">
+<!-- title, contents, writer, pw -->
+<insert id="insertBoard" parameterType="boarddto">
+ insert into board values(null, #{board_title}, #{board_contents}, #{board_writer}, 0, now(), #{board_pw})
+</insert>
+
+<select id="pagingBoardList" resultType="boarddto" >
+select * from board order by board_writingtime desc limit 
+<foreach collection="array" item="a"  separator=",">
+	#{a}
+</foreach>
+</select>
+
+<select id="boardTotalCount" resultType="int">
+select count(*) from board
+</select>
+
+<update id="updateViewcount" parameterType="int">
+update board set board_viewcount = board_viewcount+1 where board_no=#{board_no}
+</update>
+
+<select id="getDetail" parameterType="int" resultType="boarddto">
+select * from board where board_no=#{board_no}
+</select>
+
+<delete id="deleteBoard"  parameterType="int">
+delete from board where  board_no=#{board_no}
+</delete>
+
+<update id="updateBoard" parameterType="boarddto">
+update board set board_title=#{board_title} , board_contents=#{board_contents}, board_writingtime=now() where  board_no=#{board_no}
+</update>
+
+<select id="boardSearchList" resultType="boarddto" parameterType="java.util.HashMap">
+		select * from board where 
+		<choose>
+			<when test="searchcolname == null">
+				board_title like #{searchvalue} or board_contents like #{searchvalue} or board_writer like #{searchvalue}
+			</when>
+			<otherwise>
+				${searchcolname} like #{searchvalue}  
+			</otherwise>
+		</choose>
+		order by board_writingtime desc limit 
+		<foreach collection="limit" item="a"  separator=",">
+			#{a}
+		</foreach>
+</select>
+
+<select id="boardSearchCount" resultType="int" parameterType="java.util.HashMap">
+		select count(*) from board where 
+		<choose>
+			<when test="searchcolname == null">
+				board_title like #{searchvalue} or board_contents like #{searchvalue} or board_writer like #{searchvalue}
+			</when>
+			<otherwise>
+				${searchcolname} like #{searchvalue}  
+			</otherwise>
+		</choose>
+
+</select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
