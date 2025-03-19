@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="readinglog.CartDAO">
+	
+	<select id="getOneMemberCartList" resultType="cartdto">
+		select * from carts where cart_mem_id = #{id}
+	</select>
+	
+	<delete id="deleteCartOrderedItem" parameterType="String">
+		delete from carts where cart_mem_id = #{id}
+	</delete>
+	
+	<insert id="addBookInCart" parameterType="cartdto">
+		insert into carts values(null, #{cart_mem_id}, #{cart_book_title}, #{cart_book_quantity}, #{cart_book_price})
+	</insert>
+	
+</mapper>

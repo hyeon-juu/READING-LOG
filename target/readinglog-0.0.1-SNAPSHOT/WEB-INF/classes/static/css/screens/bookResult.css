@@ -1,0 +1,52 @@
+/* #searchResults{
+    display: flex;
+    flex-direction: column;
+} */
+.result__searchName{
+    font-size: 30px;
+    /* border-top: 1px solid var(--white);
+    border-bottom: 1px solid var(--white); */
+    padding : 10px 0;
+    margin : 20px 0;
+    text-align: center;
+}
+.result__searchName span{
+    color : var(--brown);
+    font-weight: 600;
+}
+.result__detail{
+    border-top: 0.5px solid var(--white);
+    display : flex;
+    align-items: center;
+    padding : 0 50px;
+    margin : 0 100px;
+}
+.result__detail:hover{
+    background-color: var(--light-green);
+    cursor: pointer;
+}
+.result__detail img{
+    width : 150px;
+    height : 220px;
+    margin-right: 30px;
+}
+.result__text{
+    padding : 20px;
+}
+.result__text__author,
+.result__text__com,
+.result__text__date,
+.result__text__content{
+    opacity: 0.8;
+}
+h3{
+    color : var(--brown);
+    font-size: 20px;
+}
+h3, p{
+    font-family: "Diphylleia", serif;
+    padding-bottom : 10px;
+}
+.result__text__price{
+    color : var(--brown);
+}
