@@ -13,12 +13,9 @@
     <title>index</title>
     <script src="jquery-3.7.1.min.js"></script>
     <script>
-        var loginStatus = $ {
-            loginStatus
-        };
+        var loginStatus = `${loginStatus}`;
 
         $(document).ready(function () {
-
             // login status true/false
             if (loginStatus) {
                 $("#login_outBtn").text("Log Out");
