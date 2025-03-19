@@ -1,9 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"   isELIgnored="false"  %>
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <%
   request.setCharacterEncoding("UTF-8");
-%> 
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,50 +12,51 @@
     <link rel="stylesheet" href="css/style.css">
     <title>index</title>
     <script src="jquery-3.7.1.min.js"></script>
-	<script>
-		
-		var loginStatus = ${loginStatus};
-	
-		$(document).ready(function() {	
-				
-			// login status true/false
-			if(loginStatus) {
-				$("#login_outBtn").text("Log Out");
-				$("#login_outBtn").prop('href', "logout");
-				
-				$("#signup_mypageBtn").text("My Page");
-				$("#signup_mypageBtn").prop('href', "mypage");
-			} else {
-				$("#login_outBtn").text("Log In");
-				$("#login_outBtn").prop('href', "login");
-		
-				$("#signup_mypageBtn").text("Sign Up");
-				$("#signup_mypageBtn").prop('href', "signup");
-				
-			}
-			
-		}); // ready end
-	</script>
+    <script>
+        var loginStatus = $ {
+            loginStatus
+        };
+
+        $(document).ready(function () {
+
+            // login status true/false
+            if (loginStatus) {
+                $("#login_outBtn").text("Log Out");
+                $("#login_outBtn").prop('href', "logout");
+
+                $("#signup_mypageBtn").text("My Page");
+                $("#signup_mypageBtn").prop('href', "mypage");
+            } else {
+                $("#login_outBtn").text("Log In");
+                $("#login_outBtn").prop('href', "login");
+
+                $("#signup_mypageBtn").text("Sign Up");
+                $("#signup_mypageBtn").prop('href', "signup");
+
+            }
+
+        }); // ready end
+    </script>
 </head>
 
 <body>
- 
- <div class="popup" id="myPopup" >
-    <span class="close-btn" onclick="closePopup()">&times;</span>
-    <a href="#"><img src="img/sideAd.png"></a>
-    <div class="hide-popup-btn" onclick="hidePopupForToday()">오늘은 그만보기</div>
-</div>
+
+    <div class="popup" id="myPopup">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <a href="#"><img src="img/sideAd.png"></a>
+        <div class="hide-popup-btn" onclick="hidePopupForToday()">오늘은 그만보기</div>
+    </div>
 
 
-<div id="modal" class="modal">
-	<a href="https://hottracks.kyobobook.co.kr/ht/hot/hotdealMain"><img src="img/floatAd.jpg">
-	<div>
-		<p>A Price Of 포인트 노트</p>
-		<p>8,500원 → 5,600원[34%]</p>
-		<p>by 핫트랙스</p>
-	</div>
-	</a>
-</div>
+    <div id="modal" class="modal">
+        <a href="https://hottracks.kyobobook.co.kr/ht/hot/hotdealMain"><img src="img/floatAd.jpg">
+            <div>
+                <p>A Price Of 포인트 노트</p>
+                <p>8,500원 → 5,600원[34%]</p>
+                <p>by 핫트랙스</p>
+            </div>
+        </a>
+    </div>
 
 
     <header class="screen-header">
@@ -68,7 +68,7 @@
         </div>
 
         <div class="screen-header__user">
-        	<a href="" id="login_outBtn"></a>
+            <a href="" id="login_outBtn"></a>
             <a href="" id="signup_mypageBtn"></a>
         </div>
     </header>
@@ -91,9 +91,11 @@
     <main class="main-screen">
 
         <div class="banner">
-            <div id="banner__text"> <!-- 배너 제목 --> </div>
+            <div id="banner__text">
+                <!-- 배너 제목 -->
+            </div>
             <img id="banner__img" src=""><!-- 배너 이미지 -->
-            
+
         </div>
 
         <div class="many_buttons">
@@ -111,19 +113,20 @@
 
         <div class="recommend">
             <span class="recommend__title">Today's book</span>
-            <span class="recommend__date">[ <%= new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date()) %> ]</span>
+            <span class="recommend__date">[
+                <%= new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date()) %> ]</span>
             <div class="book">
-	                <c:forEach var="book" items="${books}">
-                <div class="book__col">
-                    <img src="${book.book_image_url}">
-                </div>
-	                <div class="book__col">
-					    <span class="book__title">${book.book_title}</span>
-			            <span class="book__author">${book.book_author}</span>
-			            <span class="book__price">${book.book_price}</span>
-			            <p class="book__detail">${book.book_content}</p>
-					</div>
-			        </c:forEach>
+                <c:forEach var="book" items="${books}">
+                    <div class="book__col">
+                        <img src="${book.book_image_url}">
+                    </div>
+                    <div class="book__col">
+                        <span class="book__title">${book.book_title}</span>
+                        <span class="book__author">${book.book_author}</span>
+                        <span class="book__price">${book.book_price}</span>
+                        <p class="book__detail">${book.book_content}</p>
+                    </div>
+                </c:forEach>
             </div>
         </div>
 
@@ -181,7 +184,8 @@
         </div>
     </main>
 
-<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
     <script src="js/banner.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.js"
         integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
