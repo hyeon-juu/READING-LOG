@@ -4,7 +4,7 @@
 
 멀티캠퍼스 풀스택 22기 세미프로젝트
 
-<img src="src/main/resources/static/img/readme_main.png" width="500"/>
+<img src="src/main/resources/static/img/readme_main.png" width="400"/>
 
 ## 개발 목적
 
